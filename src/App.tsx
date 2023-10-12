@@ -1,9 +1,23 @@
-import './app.css';
 import { Layout } from 'antd';
-import SideNavigation from './components/SideNavigation';
 import { useEffect } from 'react';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import './app.css';
+import SideNavigation from './components/SideNavigation';
+import TaskOne from './pages/TaskOne';
+import TaskTwo from './pages/TaskTwo';
 
 const { Sider } = Layout;
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <TaskOne />,
+  },
+  {
+    path: '/tasktwo',
+    element: <TaskTwo />,
+  },
+]);
 
 function App() {
   useEffect(() => {
@@ -12,13 +26,11 @@ function App() {
   }, []);
 
   return (
-    <Layout className='layout-styles'>
-      <Sider
-        className='sider-styles'
-        width={72}
-      >
+    <Layout>
+      <Sider width={72}>
         <SideNavigation />
       </Sider>
+      <RouterProvider router={router} />
     </Layout>
   );
 }
