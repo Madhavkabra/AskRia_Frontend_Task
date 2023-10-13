@@ -1,23 +1,10 @@
-import './app.css';
 import { Layout } from 'antd';
 import { useEffect } from 'react';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
 import SideNavigation from './components/SideNavigation';
-import TaskOne from './pages/TaskOne';
-import TaskTwo from './pages/TaskTwo';
+import { router } from './router';
 
 const { Sider } = Layout;
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <TaskOne />,
-  },
-  {
-    path: '/tasktwo',
-    element: <TaskTwo />,
-  },
-]);
 
 function App() {
   useEffect(() => {}, []);
